@@ -1,5 +1,6 @@
 using myfinance_web_netcore.Infra;
 using myfinance_web_netcore.Models;
+using System.Collections.Generic;
 
 namespace myfinance_web_netcore.Domain
 {

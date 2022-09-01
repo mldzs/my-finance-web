@@ -1,3 +1,5 @@
+using System;
+
 namespace myfinance_web_netcore.Models
 {
     public class TransacaoModel
