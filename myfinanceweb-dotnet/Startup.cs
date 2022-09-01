@@ -52,6 +52,16 @@ namespace myfinanceweb_dotnet
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            CriaInstanciaDAL(app);
+        }
+
+        void CriaInstanciaDAL(WebApplication app)
+        {
+            IConfiguration configuration = app.Configuration;
+            DAL.Configuration = configuration;
+            var objDAL = DAL.GetInstancia;
+            objDAL.Conectar();
         }
     }
 }
