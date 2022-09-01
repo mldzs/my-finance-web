@@ -1,0 +1,45 @@
+@model PlanoContaModel
+@{
+    ViewData["Title"] = "Plano de Contas";
+
+    var vDescricao = string.Empty;
+    var vTipo = string.Empty;
+
+    try
+    {
+        vDescricao = @ViewBag.PlanoConta.Descricao;
+        vTipo = @ViewBag.PlanoConta.Tipo;
+    }
+    catch { }
+}
+
+<h1>@ViewData["Title"] </h1>
+
+<form asp-controller="PlanoConta" asp-action="CriarPlanoConta">
+    <input type="hidden" asp-for="Id">
+
+    <div class="mt-3 mb-3">
+        <label for="fname">Descrição:</label><br>
+        <input type="text" asp-for="Descricao" value=@vDescricao>
+    </div>
+
+    <div class="mb-3">
+        <label for="fname">Tipo:</label><br>
+        <input type="text" asp-for="Tipo" value=@vTipo>
+    </div>
+
+    @* <div class="btn-group text-capitalize mb-3 " role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="debito" autocomplete="off" checked asp-for="Tipo"
+        value=@vTipo />
+        <label class="btn btn-outline-danger" for="btnradio1">débito</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="credito" autocomplete="off" asp-for="Tipo"
+        value=@vTipo />
+        <label class="btn btn-outline-success" for="btnradio2">crédito</label>
+        </div> *@
+
+    <div>
+        <button type="submit" class="btn btn-block btn-primary mb-3">Registrar</button>
+    </div>
+
+</form>

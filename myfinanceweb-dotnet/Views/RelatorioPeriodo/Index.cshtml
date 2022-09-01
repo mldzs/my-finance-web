@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "Relatório de Transações Por Período";
+}
+
+
+<h3>@ViewData["Title"]</h3>
+<hr>
+
+<form asp-controller="RelatorioPeriodo" asp-action="Index" method="get">
+    <div class="row mt-3 input-group">
+
+        <div class="col">
+            <label>Início:</label>
+            <input id="inicio" type="date" name="DataInicio" class="form-control" required>
+        </div>
+
+        <div class="col">
+            <label>Fim:</label>
+            <input id="fim" type="date" name="DataFim" class="form-control" required>
+        </div>
+        <div class="col align-self-end">
+            <button type="submit" class="btn btn-block btn-primary float-end">Filtrar</button>
+        </div>
+    </div>
+
+</form>
+<hr>
+
+<figure class="figure">
+    <canvas id="myChart" width="400" height="400"></canvas>
+</figure>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>const ctx = document.getElementById('myChart').getContext('2d');
+    if (@ViewBag.list[0] > 0 || @ViewBag.list[1] > 0) {
+        const myChart = new Chart(
+            ctx,
+            {
+                type: 'pie',
+                data: {
+                    labels: ['Despesas', 'Receitas'],
+                    datasets: [{
+                        label: '# of Votes', data: [@ViewBag.list[0], @ViewBag.list[1]],
+                        backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(99, 255, 132, 0.6)'],
+                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(80, 255, 100, 1)'],
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Receita e Despesa por período',
+                            padding: {
+                                top: 1,
+                                bottom: 15
+                            }
+                        },
+                        legend: {
+                            position: 'bottom',
+                            align: "center",
+                            title: {
+                                display: true,
+                                text: 'Legenda',
+                                padding: {
+                                    top: 30
+                                }
+                            }
+                        },
+                        chartAreaBorder: {
+                            borderColor: 'red',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            borderDashOffset: 2,
+                        }
+                    }
+                }
+            });
+    }
+</script>
