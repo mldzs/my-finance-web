@@ -1,8 +1,35 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "My Finance Web";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <h4>Pós-Graduação em Engenharia de Software da PUC-MG</h4>
+
+    <h5>Práticas de Implementação e Evolução de Software</h5>
+    <br>
+
+</div>
+
+<div class="row align-items-start">
+    <div class="col mt-5 mb-5">
+        <p>Como parte prática da disciplina, construímos um sistema para controle de finanças pessoais bem simples,
+            que
+            permite
+            ao usuário registrar planos de contas e transações realizadas para consulta posterior.</p>
+    </div>
+    <div class="col mt-5 mb-5">
+        <p>O sistema foi arquitetado no padrão MVC, utilizando a linguagem ASP.NET CORE MVC na versão .NET 6.0 com
+            Banco de
+            Dados SQL-SERVER.</p>
+    </div>
+</div>
+
+
+<div class="text-center">
+    <p>Mais detalhes podem ser encontrados no repositório do <a
+                                                                 href="https://github.com/bernardobt/my-finance-web-netcore">GitHub</a>.
+    </p>
 </div>

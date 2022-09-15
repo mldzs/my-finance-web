@@ -1,6 +1,5 @@
-using myfinance_web_netcore.Infra;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Builder;
+using myfinanceweb_dotnet.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
 

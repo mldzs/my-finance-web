@@ -20,26 +20,23 @@
 
     <div class="mt-3 mb-3">
         <label for="fname">Descrição:</label><br>
-        <input type="text" asp-for="Descricao" value=@vDescricao>
+        <input type="text" class="form-control" asp-for="Descricao" value=@vDescricao required>
     </div>
 
     <div class="mb-3">
         <label for="fname">Tipo:</label><br>
-        <input type="text" asp-for="Tipo" value=@vTipo>
+        <input type="text" class="form-control" asp-for="Tipo" value=@vTipo required>
     </div>
 
-    @* <div class="btn-group text-capitalize mb-3 " role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="debito" autocomplete="off" checked asp-for="Tipo"
-        value=@vTipo />
-        <label class="btn btn-outline-danger" for="btnradio1">débito</label>
-
-        <input type="radio" class="btn-check" name="btnradio" id="credito" autocomplete="off" asp-for="Tipo"
-        value=@vTipo />
-        <label class="btn btn-outline-success" for="btnradio2">crédito</label>
-        </div> *@
-
     <div>
-        <button type="submit" class="btn btn-block btn-primary mb-3">Registrar</button>
+        <button type="submit" class="btn btn-primary text-capitalize mb-3">Registrar</button>
+        <button type="button" class="btn btn-secondary text-capitalize mb-3" onclick="Cancelar()">Cancelar</button>
     </div>
 
 </form>
+
+<script>
+    function Cancelar() {
+        window.location.href = "../"
+    }
+</script>

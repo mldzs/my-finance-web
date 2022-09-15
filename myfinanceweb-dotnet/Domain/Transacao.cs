@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using myfinance_web_netcore.Infra;
-using myfinance_web_netcore.Models;
+using myfinanceweb_dotnet.Infra;
+using myfinanceweb_dotnet.Models;
 
 namespace myfinanceweb_dotnet.Domain
 {
