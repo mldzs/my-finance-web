@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using myfinanceweb_dotnet.Models;
 
-namespace myfinance_web_netcore.Controllers
+namespace myfinanceweb_dotnet.Controllers
 {
     public class HomeController : Controller
     {

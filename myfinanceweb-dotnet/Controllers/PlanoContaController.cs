@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using myfinance_web_netcore.Domain;
 using Microsoft.Extensions.Logging;
+using myfinance_web_netcore.Domain;
 using myfinance_web_netcore.Models;
 
-namespace myfinance_web_netcore.Controllers
+namespace myfinanceweb_dotnet.Controllers
 {
     public class PlanoContaController : Controller
     {
