@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using myfinance_web_netcore.Models;
+using myfinanceweb_dotnet.Models;
 
 namespace myfinance_web_netcore.Controllers
 {
