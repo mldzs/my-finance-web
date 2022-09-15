@@ -1,9 +1,9 @@
+using System;
+using System.Collections.Generic;
 using myfinance_web_netcore.Infra;
 using myfinance_web_netcore.Models;
-using System.Collections.Generic;
-using System;
 
-namespace myfinance_web_netcore.Domain
+namespace myfinanceweb_dotnet.Domain
 {
     public class Transacao
     {
