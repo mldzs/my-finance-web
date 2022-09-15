@@ -1,7 +1,7 @@
-using myfinance_web_netcore.Infra;
 using System.Collections.Generic;
+using myfinance_web_netcore.Infra;
 
-namespace myfinance_web_netcore.Domain
+namespace myfinanceweb_dotnet.Domain
 {
     public class RelatorioPeriodo
     {
