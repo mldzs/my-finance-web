@@ -1,8 +1,8 @@
-using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.Extensions.Configuration;
 
-namespace myfinance_web_netcore.Infra
+namespace myfinanceweb_dotnet.Infra
 {
     public class DAL
     {
