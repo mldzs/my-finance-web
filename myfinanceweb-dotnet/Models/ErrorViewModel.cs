@@ -1,5 +1,3 @@
-using System;
-
 namespace myfinanceweb_dotnet.Models
 {
     public class ErrorViewModel
