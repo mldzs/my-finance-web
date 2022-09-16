@@ -21,20 +21,5 @@ namespace myfinanceweb_dotnet.Controllers
 
             return View();
         }
-
-        [HttpGet]
-        public IActionResult GerarRelatorio()
-        {
-            var teste = new RelatorioPeriodo();
-
-
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
     }
 }

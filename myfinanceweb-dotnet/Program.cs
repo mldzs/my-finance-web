@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Configuration;
 using myfinanceweb_dotnet.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +35,5 @@ void CreateDalInstance(WebApplication app)
     IConfiguration configuration = app.Configuration;
     DAL.Configuration = configuration;
     var objDAL = DAL.GetInstance;
-    // objDAL.Connect();
-    // objDAL.ExecuteSqlCommand("INSERT INTO PLANO_CONTAS(DESCRICAO, TIPO) VALUES('Luz', 'D'");
+    objDAL.Connect();
 }
