@@ -43,7 +43,7 @@ namespace myfinanceweb_dotnet.Domain
             var objDAL = DAL.GetInstance;
             objDAL.Connect();
 
-            var sql = "SELECT ID, DESCRICAO, TIPO FROM PLANO_CONTAS";
+            var sql = "SELECT ID, DESCRICAO, TIPO FROM PLANO_CONTAS order by ID desc";
             var dataTable = objDAL.ReturnDataTable(sql);
 
             for (int i = 0; i < dataTable.Rows.Count; i++)

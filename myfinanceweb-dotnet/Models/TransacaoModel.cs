@@ -10,7 +10,7 @@ namespace myfinanceweb_dotnet.Models
         public int? Id { get; set; }
         public DateTime Data { get; set; }
         public decimal Valor { get; set; }
-        public string Historico { get; set; }
+        public string Descricao { get; set; }
         public string Tipo { get; set; }
         [Display(Name = "Plano de Contas")]
         public int IdPlanoConta { get; set; }

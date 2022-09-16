@@ -16,7 +16,7 @@
         vId = int.Parse(@ViewBag.Registro.Id.ToString());
         vData = DateTime.Parse(@ViewBag.Registro.Data.ToString()).ToString("yyyy-MM-dd");
         vPlanoContaId = int.Parse(@ViewBag.Registro.IdPlanoConta.ToString());
-        vDescricao = @ViewBag.Registro.Historico.ToString();
+        vDescricao = @ViewBag.Registro.Descricao.ToString();
         vTipo = @ViewBag.Registro.Tipo.ToString();
 
         CultureInfo invC = CultureInfo.InvariantCulture;
@@ -40,7 +40,7 @@
 
     <div class="form-group mb-3">
         <lable>Tipo</lable>
-        <input type="text" asp-for="Tipo" class="form-control" value="@vTipo">
+        <input type="text" asp-for="Tipo" maxlength="1" class="form-control" value="@vTipo">
         <span asp-validation-for="Data" class="text-danger"></span>
     </div>
 
@@ -51,9 +51,9 @@
     </div>
 
     <div class="form-group mb-3">
-        <lable>Histórico</lable>
-        @Html.TextArea("Historico", vDescricao, new { @class = "form-control" })
-        <span asp-validation-for="Historico" class="text-danger"></span>
+        <lable>Descrição</lable>
+        @Html.TextArea("Descricao", vDescricao, new { @class = "form-control" })
+        <span asp-validation-for="Descricao" class="text-danger"></span>
     </div>
 
     <div class="form-group mb-3">

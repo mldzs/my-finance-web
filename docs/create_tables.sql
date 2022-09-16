@@ -18,10 +18,10 @@ create table transacao(
 
 use myfinance
 
-insert into plano_contas(tipo,descricao) values('C','Salário');
-insert into plano_contas(tipo,descricao) values('C','Aluguel');
-insert into plano_contas(tipo,descricao) values('C','Juros Aplicação');
-insert into plano_contas(tipo,descricao) values('C','Dividendos');
+insert into plano_contas(tipo,descricao) values('R','Salário');
+insert into plano_contas(tipo,descricao) values('R','Aluguel');
+insert into plano_contas(tipo,descricao) values('R','Juros Aplicação');
+insert into plano_contas(tipo,descricao) values('R','Dividendos');
 
 insert into plano_contas(tipo,descricao) values('D','Supermercado');
 insert into plano_contas(tipo,descricao) values('D','Restaurante');
@@ -45,6 +45,6 @@ insert into transacao(data,tipo,descricao,valor,id_plano_conta)
 values('2022-08-04 19:54', 'D','Compras do Mês', 750.48, 5);
 
 insert into transacao(data,tipo,descricao,valor,id_plano_conta)
-values('2022-08-01 00:00', 'C','Salário Empresa X', 32000, 1);
+values('2022-08-01 00:00', 'R','Salário Empresa X', 32000, 1);
 
 select * from transacao

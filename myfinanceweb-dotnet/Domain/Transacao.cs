@@ -12,12 +12,12 @@ namespace myfinanceweb_dotnet.Domain
         {
             var objDAL = DAL.GetInstance;
             objDAL.Connect();
-            var sql = "INSERT INTO TRANSACAO( DATA, VALOR, TIPO, HISTORICO, ID_PLANO_CONTA) " +
+            var sql = "INSERT INTO TRANSACAO( DATA, VALOR, TIPO, DESCRICAO, ID_PLANO_CONTA) " +
             "VALUES ( " +
             $"'{formulario.Data.ToString("yyyy-MM-dd")}'," +
             $"{formulario.Valor}," +
             $"'{formulario.Tipo}'," +
-            $"'{formulario.Historico}'," +
+            $"'{formulario.Descricao}'," +
             $"{formulario.IdPlanoConta}" +
             ")";
 
@@ -33,7 +33,7 @@ namespace myfinanceweb_dotnet.Domain
             $"Data = '{formulario.Data.ToString("yyyy-MM-dd")}'," +
             $"Valor = {formulario.Valor}," +
             $"Tipo = '{formulario.Tipo}'," +
-            $"Historico = '{formulario.Historico}'," +
+            $"Descricao = '{formulario.Descricao}'," +
             $"ID_PLANO_CONTA = {formulario.IdPlanoConta} " +
             $"WHERE ID = {formulario.Id}";
 
@@ -55,7 +55,7 @@ namespace myfinanceweb_dotnet.Domain
             var objDAL = DAL.GetInstance;
             objDAL.Connect();
 
-            var sql = "SELECT ID, DATA, VALOR, TIPO, HISTORICO, ID_PLANO_CONTA FROM transacao";
+            var sql = "SELECT ID, DATA, VALOR, TIPO, DESCRICAO, ID_PLANO_CONTA FROM transacao order by ID desc";
             var dataTable = objDAL.ReturnDataTable(sql);
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
@@ -66,7 +66,7 @@ namespace myfinanceweb_dotnet.Domain
                     Data = DateTime.Parse(dataTable.Rows[i]["DATA"].ToString()),
                     Valor = decimal.Parse(dataTable.Rows[i]["VALOR"].ToString()),
                     Tipo = dataTable.Rows[i]["TIPO"].ToString(),
-                    Historico = dataTable.Rows[i]["HISTORICO"].ToString(),
+                    Descricao = dataTable.Rows[i]["DESCRICAO"].ToString(),
                     IdPlanoConta = int.Parse(dataTable.Rows[i]["ID_PLANO_CONTA"].ToString()),
                 };
 
@@ -80,13 +80,13 @@ namespace myfinanceweb_dotnet.Domain
             var objDAL = DAL.GetInstance;
             objDAL.Connect();
 
-            var sql = $"SELECT ID, DATA, VALOR, TIPO, HISTORICO, ID_PLANO_CONTA FROM transacao WHERE ID ={id}";
+            var sql = $"SELECT ID, DATA, VALOR, TIPO, DESCRICAO, ID_PLANO_CONTA FROM transacao WHERE ID ={id}";
             var dataTable = objDAL.ReturnDataTable(sql);
 
             var transacao = new TransacaoModel()
             {
                 Id = int.Parse(dataTable.Rows[0]["ID"].ToString()),
-                Historico = dataTable.Rows[0]["HISTORICO"].ToString(),
+                Descricao = dataTable.Rows[0]["DESCRICAO"].ToString(),
                 Tipo = dataTable.Rows[0]["TIPO"].ToString(),
                 Data = DateTime.Parse(dataTable.Rows[0]["DATA"].ToString()),
                 Valor = decimal.Parse(dataTable.Rows[0]["VALOR"].ToString()),

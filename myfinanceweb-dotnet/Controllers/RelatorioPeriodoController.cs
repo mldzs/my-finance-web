@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using myfinanceweb_dotnet.Domain;
 
 namespace myfinanceweb_dotnet.Controllers
@@ -14,7 +13,7 @@ namespace myfinanceweb_dotnet.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string DataInicio = "1/1/0001", string DataFim = "1/31/0001")
+        public IActionResult Index(string DataInicio = "0001-1-1", string DataFim = "0001-1-1")
         {
             var relatorio = new RelatorioPeriodo();
             ViewBag.List = relatorio.ListaRelatorios(DataInicio, DataFim);
