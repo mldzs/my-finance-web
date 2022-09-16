@@ -13,6 +13,9 @@ Diagrama de Entidades e Relacionamentos que representa o esquema lógico do banc
 
 O modelo arquitetural que foi utilizado para estruturar o projeto foi o MVC (Model View Controller). Foram separadas as responsabilidades em camadas, onde cada módulo tem seu papel no funcionamento do sistema.
 
+<img src='docs\mvc.png' alt='MVC'>
+
+
 ## Como rodar
 
 Primeiro de tudo, é importante ter instalado as seguintes dependencias:
